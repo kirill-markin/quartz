@@ -2,4 +2,3 @@
 	path = content
 	url = https://github.com/kirill-markin/obsidian-vault.git
 	branch = main
-	sparse-checkout = public

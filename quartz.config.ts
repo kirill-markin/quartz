@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
+    pageTitle: "🪴 Kirill Markin's Digital Garden",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -18,21 +18,10 @@ const config: QuartzConfig = {
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
     ignorePatterns: [
-      // By default, ignore everything except markdown files
-      "*",
-      "!*.md",
-      // Ignore system directories
-      "private",
-      "templates",
-      ".obsidian",
       ".git",
       ".github",
-      "tests",
-      // Explicitly allowed media files - add your paths here
-      "!assets/allowed-image1.png",
-      "!assets/allowed-image2.jpg",
-      // Add more allowed files here in format:
-      // "!exact/path/to/file.extension",
+      ".obsidian",
+      "node_modules",
     ],
     defaultDateType: "created",
     generateSocialImages: false,
