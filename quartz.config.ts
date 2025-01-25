@@ -21,6 +21,7 @@ const config: QuartzConfig = {
       ".git",
       ".github",
       ".obsidian",
+      "_obsidian",
       "node_modules",
     ],
     defaultDateType: "created",
