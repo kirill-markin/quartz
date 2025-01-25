@@ -82,10 +82,6 @@ const config: QuartzConfig = {
     ],
     filters: [
       Plugin.RemoveDrafts(),
-      // CRITICAL SETTING: This filter ensures only notes with "publish: true" in their YAML frontmatter are published
-      // Without this filter, ALL notes from the vault would be publicly visible
-      // DO NOT REMOVE THIS LINE unless you want to make your entire vault public
-      Plugin.ExplicitPublish(),
     ],
     emitters: [
       Plugin.AliasRedirects(),
