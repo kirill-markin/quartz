@@ -17,7 +17,23 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: [
+      // By default, ignore everything except markdown files
+      "*",
+      "!*.md",
+      // Ignore system directories
+      "private",
+      "templates",
+      ".obsidian",
+      ".git",
+      ".github",
+      "tests",
+      // Explicitly allowed media files - add your paths here
+      "!assets/allowed-image1.png",
+      "!assets/allowed-image2.jpg",
+      // Add more allowed files here in format:
+      // "!exact/path/to/file.extension",
+    ],
     defaultDateType: "created",
     generateSocialImages: false,
     theme: {
