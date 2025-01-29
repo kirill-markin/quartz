@@ -8,6 +8,7 @@
 ## Workflow
 - Pull before work: repo changes frequently
 - Create PR -> merge to v4
+  - Prefer using CLI for PR creation and merging: `gh pr create` and `gh pr merge`
 - GitHub Actions deploys to gh-pages on v4 branch pushes
 - Submodules need recursive update after pull
 
