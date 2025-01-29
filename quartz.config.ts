@@ -97,6 +97,7 @@ const config: QuartzConfig = {
       Plugin.Static(),
       Plugin.NotFoundPage(),
       Plugin.CNAME(), // Needed for github pages
+      Plugin.RobotsTxt(),
     ],
   },
 }
