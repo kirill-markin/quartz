@@ -1,0 +1,17 @@
+# Quartz Repository Rules
+
+## Branch Rules
+- Main branch: `v4`
+- Protected branch: requires PR, no direct pushes
+- Always create feature branches: `feat/*`, `fix/*`, etc.
+
+## Workflow
+- Pull before work: repo changes frequently
+- Create PR -> merge to v4
+- GitHub Actions deploys to gh-pages on v4 branch pushes
+- Submodules need recursive update after pull
+
+## Project
+- Static site generator for digital garden/notes
+- Base URL: articles.kirill-markin.com
+- Uses submodules (_obsidian) 
