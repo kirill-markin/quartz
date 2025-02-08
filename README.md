@@ -1,18 +1,101 @@
-# Quartz v4
+# Kirill Markin's Digital Garden 🌱
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+This repository hosts my personal digital garden/blog available at [articles.kirill-markin.com](https://articles.kirill-markin.com). It's built using [Quartz](https://quartz.jzhao.xyz/), a powerful static site generator designed for publishing digital gardens and personal knowledge bases.
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
-Quartz v4 features a from-the-ground rewrite focusing on end-user extensibility and ease-of-use.
+## About This Site
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+This is where I share my thoughts, insights, and discoveries about technology, development, and various other topics. The content is written in Obsidian-compatible markdown format, making it easy to maintain and interconnect ideas.
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+The site content comes from two sources:
+- Direct markdown files in `content/` directory
+- Selected public notes from my Obsidian vault (`_obsidian/public/`), linked through the `content/` directory
 
-## Sponsors
+> Note: While the repository includes my full Obsidian vault as a submodule (`_obsidian/`), only content from its `public/` directory is published and accessible through this blog.
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+## Local Development
+
+### Prerequisites
+- Node.js 20 or higher
+- npm 9.3.1 or higher
+- Git
+
+### Setup and Run
+
+1. Clone the repository with submodules:
+```bash
+git clone https://github.com/kirill-markin/quartz.git
+cd quartz
+```
+
+2. Update submodules (required after clone/pull):
+```bash
+git submodule update --init --recursive
+```
+
+3. Install dependencies:
+```bash
+npm ci
+```
+
+4. Start the development server:
+```bash
+npx quartz build --serve --port 8080
+```
+
+The site will be available at `http://localhost:8080`
+
+### Building for Production
+
+To build the site without starting a development server:
+```bash
+npx quartz build
+```
+
+## Content Structure
+
+- All content is stored in the `content/` directory
+- Each markdown file must include frontmatter with `publish: true` to be visible
+- Example frontmatter:
+  ```yaml
+  ---
+  title: "Page Title"
+  date: 2024-02-08
+  tags: [tag1, tag2]
+  publish: true
+  ---
+  ```
+
+## Features
+
+- 🔍 Full-text search
+- 📊 Interactive graph view
+- 🔗 Wikilink support
+- 📱 Mobile-friendly
+- 🌙 Dark/Light mode
+- 🧮 LaTeX support
+- 📝 Table of contents generation
+
+## Contributing
+
+This is a personal blog, but if you notice any issues or have suggestions:
+1. Create a feature branch from `v4`: `feat/*` or `fix/*`
+2. Make your changes
+3. Submit a pull request to the `v4` branch
+
+## Deployment
+
+The site automatically deploys to GitHub Pages when changes are merged into the `v4` branch. The deployment process includes:
+- Recursive submodule updates
+- Full git history fetch
+- Clean dependency installation
+- Build and publish to gh-pages
+
+## Contact
+
+If you'd like to discuss any of the content or have questions, you can reach me at:
+- Website: [kirill-markin.com](https://kirill-markin.com)
+- GitHub: [@kirill-markin](https://github.com/kirill-markin)
+
+## License
+
+Content is licensed under [MIT License](LICENSE) unless otherwise specified.
