@@ -11,29 +11,28 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout Quartz with submodules
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          ref: v4
           fetch-depth: 0
-          submodules: 'recursive'
           token: ${{ secrets.PERSONAL_TOKEN }}
       
-      - name: Configure Git for HTTPS instead of SSH
-        run: |
-          git config --global url."https://${{ secrets.PERSONAL_TOKEN }}@github.com/".insteadOf "git@github.com:"
-          
-      - name: Setup Git
+      - name: Update Git config
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          
-      - name: Update and sync content
+          git config --global url."https://${{ secrets.PERSONAL_TOKEN }}@github.com/".insteadOf git@github.com:
+      
+      - name: Initialize and update submodules
         run: |
-          git submodule update --init --recursive --remote
-          git add .
-          git diff --staged --quiet || git commit -m "Update obsidian content"
-          git push
+          git submodule init
+          git submodule update --remote
+          cd _obsidian
+          git checkout main
+          cd ..
+          git add _obsidian
+          git commit -m "Update obsidian content" || echo "No changes to commit"
+          git push || echo "No changes to push"
           
       - name: Setup Node.js
         uses: actions/setup-node@v4
