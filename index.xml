@@ -6,6 +6,12 @@
       <description>Last 10 notes on Kirill&#039;s notes</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Cursor IDE: Rules for AI</title>
+    <link>https://articles.kirill-markin.com/system/cursor-ide-rules-for-ai</link>
+    <guid>https://articles.kirill-markin.com/system/cursor-ide-rules-for-ai</guid>
+    <description>These are my base rules configured in Cursor IDE that apply to all AI interactions globally. They serve as foundation-level settings for all coding tasks.</description>
+    <pubDate>Sat, 08 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
     <title>Cursor IDE: Frontend vs Backend Development Experience</title>
     <link>https://articles.kirill-markin.com/cursor-frontend-vs-backend-experience</link>
     <guid>https://articles.kirill-markin.com/cursor-frontend-vs-backend-experience</guid>
