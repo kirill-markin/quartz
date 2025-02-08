@@ -1,18 +1,38 @@
-# Quartz Repository Rules
+# Quartz Blog (articles.kirill-markin.com)
 
-## Branch Rules
-- Main branch: `v4`
-- Protected branch: requires PR, no direct pushes
-- Always create feature branches: `feat/*`, `fix/*`, etc.
+## Structure
+- Branch: `v4`
+- Content: `content/*.md` (Obsidian-compatible)
+- Config: `quartz.config.ts`
+- Submodule: `_obsidian/` (only `public/` content is published)
+- Note: `content/` links to `_obsidian/public/`
 
-## Workflow
-- Pull before work: repo changes frequently
-- Create PR -> merge to v4
-  - Prefer using CLI for PR creation and merging: `gh pr create` and `gh pr merge`
-- GitHub Actions deploys to gh-pages on v4 branch pushes
-- Submodules need recursive update after pull
+## Commands
+```bash
+# Initial setup
+git submodule update --init --recursive && npm ci
 
-## Project
-- Static site generator for digital garden/notes
-- Base URL: articles.kirill-markin.com
-- Uses submodules (_obsidian) 
+# Dev server
+npx quartz build --serve --port 8080
+
+# Production build
+npx quartz build
+```
+
+## Content
+```yaml
+---
+title: "Title"
+date: 2024-02-08
+tags: [tag1, tag2]
+publish: true  # required
+---
+```
+
+## Development
+- Branch from `v4`: `feat/*` or `fix/*`
+- Pull & update submodules before work
+- TypeScript with strict types
+
+## Deploy
+Auto-deploys to gh-pages on merge to `v4` 
