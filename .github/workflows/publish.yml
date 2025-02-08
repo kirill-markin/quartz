@@ -12,31 +12,36 @@ jobs:
     
     steps:
       - name: Checkout Quartz with submodules
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
+          ref: v4
+          fetch-depth: 0
           submodules: 'recursive'
           token: ${{ secrets.PERSONAL_TOKEN }}
+      
+      - name: Configure Git for HTTPS instead of SSH
+        run: |
+          git config --global url."https://${{ secrets.PERSONAL_TOKEN }}@github.com/".insteadOf "git@github.com:"
           
       - name: Setup Git
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git config --global url."https://${{ secrets.PERSONAL_TOKEN }}@github.com/".insteadOf "https://github.com/"
           
       - name: Update and sync content
         run: |
-          git submodule update --remote
+          git submodule update --init --recursive --remote
           git add .
           git diff --staged --quiet || git commit -m "Update obsidian content"
           git push
           
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           
       - name: Install Dependencies
-        run: npm install
+        run: npm ci
           
       - name: Build Site
         run: npx quartz build
