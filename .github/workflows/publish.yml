@@ -16,15 +16,18 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.PERSONAL_TOKEN }}
+          submodules: false  # We'll initialize submodules manually
       
       - name: Update Git config
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git config --global url."https://${{ secrets.PERSONAL_TOKEN }}@github.com/".insteadOf git@github.com:
+          # Configure Git to use HTTPS instead of SSH with token authentication
+          git config --global url."https://${{ secrets.PERSONAL_TOKEN }}@github.com/".insteadOf "https://github.com/"
       
       - name: Initialize and update submodules
         run: |
+          # Initialize submodules with the configured authentication
           git submodule init
           git submodule update --remote
           cd _obsidian
