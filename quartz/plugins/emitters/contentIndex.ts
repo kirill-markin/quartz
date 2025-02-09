@@ -2,7 +2,7 @@ import { Root } from "hast"
 import { GlobalConfiguration } from "../../cfg"
 import { getDate } from "../../components/Date"
 import { escapeHTML } from "../../util/escape"
-import { FilePath, FullSlug, SimpleSlug, joinSegments, simplifySlug } from "../../util/path"
+import { FilePath, FullSlug, SimpleSlug, joinSegments, simplifySlug, getAllSegmentPrefixes } from "../../util/path"
 import { QuartzEmitterPlugin } from "../types"
 import { toHtml } from "hast-util-to-html"
 import { write } from "./helpers"
@@ -42,10 +42,45 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
     <loc>https://${joinSegments(base, encodeURI(slug))}</loc>
     ${content.date && `<lastmod>${content.date.toISOString()}</lastmod>`}
   </url>`
-  const urls = Array.from(idx)
+
+  // Get all unique tags from content
+  const tags = new Set<string>()
+  for (const [_, content] of idx) {
+    content.tags.forEach(tag => {
+      // Add all tag segments (for hierarchical tags)
+      getAllSegmentPrefixes(tag).forEach(segment => tags.add(segment))
+    })
+  }
+
+  // Generate URLs for content pages
+  const contentUrls = Array.from(idx)
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
     .join("")
-  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${urls}</urlset>`
+
+  // Generate URLs for tag pages
+  const tagUrls = Array.from(tags)
+    .map(tag => {
+      const tagSlug = `tags/${tag}` as SimpleSlug
+      return createURLEntry(tagSlug, {
+        title: `${cfg.pageTitle}: ${i18n(cfg.locale).pages.tagContent.tag} ${tag}`,
+        links: [],
+        tags: [],
+        content: "",
+        date: new Date() // Use current date for tag pages
+      })
+    })
+    .join("")
+
+  // Add the main tags index page
+  const tagsIndexUrl = createURLEntry("tags/" as SimpleSlug, {
+    title: `${cfg.pageTitle}: ${i18n(cfg.locale).pages.tagContent.tagIndex}`,
+    links: [],
+    tags: [],
+    content: "",
+    date: new Date() // Use current date for tags index
+  })
+
+  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${contentUrls}${tagUrls}${tagsIndexUrl}</urlset>`
 }
 
 function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: number): string {
