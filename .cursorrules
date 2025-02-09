@@ -33,6 +33,11 @@ publish: true  # required
 - Branch from `v4`: `feat/*` or `fix/*`
 - Pull & update submodules before work
 - TypeScript with strict types
+- NEVER merge locally into protected branches (like `v4`), always use PR workflow:
+  1. Create feature branch
+  2. Push changes to feature branch
+  3. Create PR using `gh pr create`
+  4. Merge through GitHub interface or `gh pr merge`
 
 ## Deploy
 Auto-deploys to gh-pages on merge to `v4` 
