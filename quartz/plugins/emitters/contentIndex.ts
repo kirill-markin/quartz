@@ -62,7 +62,7 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
     .map(tag => {
       const tagSlug = `tags/${tag}` as SimpleSlug
       return createURLEntry(tagSlug, {
-        title: `Tag: ${tag}`,
+        title: `${cfg.pageTitle}: ${i18n(cfg.locale).pages.tagContent.tag} ${tag}`,
         links: [],
         tags: [],
         content: "",
@@ -73,7 +73,7 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
 
   // Add the main tags index page
   const tagsIndexUrl = createURLEntry("tags/" as SimpleSlug, {
-    title: "Tags",
+    title: `${cfg.pageTitle}: ${i18n(cfg.locale).pages.tagContent.tagIndex}`,
     links: [],
     tags: [],
     content: "",
