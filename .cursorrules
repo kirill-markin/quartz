@@ -37,7 +37,7 @@ publish: true  # required
   1. Create feature branch
   2. Push changes to feature branch
   3. Create PR using `gh pr create`
-  4. Merge through GitHub interface or `gh pr merge`
+  4. Merge through GitHub interface or `gh pr merge --delete-branch` (always use --delete-branch flag to clean up)
 
 ## Deploy
 Auto-deploys to gh-pages on merge to `v4` 
