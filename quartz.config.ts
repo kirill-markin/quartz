@@ -24,7 +24,7 @@ const config: QuartzConfig = {
       "_obsidian",
       "node_modules",
     ],
-    defaultDateType: "created",
+    defaultDateType: "modified",
     generateSocialImages: false,
     theme: {
       fontOrigin: "googleFonts",
