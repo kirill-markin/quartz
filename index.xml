@@ -6,6 +6,12 @@
       <description>Last 10 notes on Kirill&#039;s notes</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>How to Fix Steam Game Downloads in Whisky on macOS</title>
+    <link>https://articles.kirill-markin.com/fix-whisky-steam-game-downloads</link>
+    <guid>https://articles.kirill-markin.com/fix-whisky-steam-game-downloads</guid>
+    <description>Issue When using Whisky (a Wine wrapper) on macOS, you might encounter an issue where some Steam games download normally while others fail to download at all ...</description>
+    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
     <title>Cursor IDE: Rules for AI</title>
     <link>https://articles.kirill-markin.com/cursor-ide-rules-for-ai</link>
     <guid>https://articles.kirill-markin.com/cursor-ide-rules-for-ai</guid>
@@ -59,12 +65,6 @@
     <guid>https://articles.kirill-markin.com/reddit-post-about-open-source</guid>
     <description>I have a few open source repositories on my GitHub profile. Usually, they only get users when I mention them publicly. However, one of my repositories is gaining stars and users on its own.</description>
     <pubDate>Fri, 20 Dec 2024 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Don&#039;t charge clients for short breaks when you bill by the hour</title>
-    <link>https://articles.kirill-markin.com/linkedin-post-hourly-billing-breaks</link>
-    <guid>https://articles.kirill-markin.com/linkedin-post-hourly-billing-breaks</guid>
-    <description>Many clients are familiar with the Pomodoro Method: 25 minutes of work, then a 5-minute break. Here’s a new way to handle these breaks. Don’t charge for short breaks.</description>
-    <pubDate>Mon, 04 Nov 2024 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
