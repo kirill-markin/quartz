@@ -1,4 +1,0 @@
-[submodule "_obsidian"]
-	path = _obsidian
-	url = https://github.com/kirill-markin/obsidian-vault.git
-	branch = main
