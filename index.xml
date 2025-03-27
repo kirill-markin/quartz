@@ -6,6 +6,12 @@
       <description>Last 10 notes on Kirill&#039;s notes</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>LLM-Powered HTML Presentation Generator</title>
+    <link>https://articles.kirill-markin.com/llm-powered-html-presentation-generator</link>
+    <guid>https://articles.kirill-markin.com/llm-powered-html-presentation-generator</guid>
+    <description>Concept A minimalist approach to creating presentations using plain HTML files and AI assistance in Cursor IDE. Instead of complex presentation software, use simple HTML files for each slide, letting AI help with content and styling.</description>
+    <pubDate>Thu, 27 Mar 2025 00:00:00 GMT</pubDate>
+  </item><item>
     <title>Content Distribution Strategy for Personal Brand and Business</title>
     <link>https://articles.kirill-markin.com/content-distribution-strategy-for-personal-brand</link>
     <guid>https://articles.kirill-markin.com/content-distribution-strategy-for-personal-brand</guid>
@@ -58,12 +64,6 @@
     <link>https://articles.kirill-markin.com/linkedin-post-hourly-billing-breaks</link>
     <guid>https://articles.kirill-markin.com/linkedin-post-hourly-billing-breaks</guid>
     <description>Many clients are familiar with the Pomodoro Method: 25 minutes of work, then a 5-minute break. Here’s a new way to handle these breaks. Don’t charge for short breaks.</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Repository start to gain users, contributors and stars without my promotion</title>
-    <link>https://articles.kirill-markin.com/reddit-post-about-open-source</link>
-    <guid>https://articles.kirill-markin.com/reddit-post-about-open-source</guid>
-    <description>I have a few open source repositories on my GitHub profile. Usually, they only get users when I mention them publicly. However, one of my repositories is gaining stars and users on its own.</description>
     <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
   </item>
     </channel>
