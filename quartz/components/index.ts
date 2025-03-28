@@ -22,6 +22,7 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import TagNav from "./TagNav"
 import RelatedContent from "./RelatedContent"
+import LatestPosts from "./LatestPosts"
 
 export {
   ArticleTitle,
@@ -48,4 +49,5 @@ export {
   Breadcrumbs,
   Comments,
   TagNav,
+  LatestPosts,
 }
