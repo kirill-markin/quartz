@@ -25,6 +25,10 @@ export default {
       title: "Обратные ссылки",
       noBacklinksFound: "Обратные ссылки отсутствуют",
     },
+    relatedContent: {
+      title: "Похожие статьи",
+      noRelatedContent: "Похожие статьи не найдены",
+    },
     themeToggle: {
       lightMode: "Светлый режим",
       darkMode: "Тёмный режим",
