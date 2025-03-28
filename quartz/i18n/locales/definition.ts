@@ -31,6 +31,10 @@ export interface Translation {
       title: string
       noRelatedContent: string
     }
+    latestPosts: {
+      title: string
+      noLatestPosts: string
+    }
     themeToggle: {
       lightMode: string
       darkMode: string

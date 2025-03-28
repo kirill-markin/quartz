@@ -29,6 +29,10 @@ export default {
       title: "Related Articles",
       noRelatedContent: "No related articles found",
     },
+    latestPosts: {
+      title: "Latest Posts",
+      noLatestPosts: "No published articles",
+    },
     themeToggle: {
       lightMode: "Light mode",
       darkMode: "Dark mode",
