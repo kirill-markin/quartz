@@ -25,6 +25,10 @@ export default {
       title: "Backlinks",
       noBacklinksFound: "No backlinks found",
     },
+    relatedContent: {
+      title: "Related Articles",
+      noRelatedContent: "No related articles found",
+    },
     themeToggle: {
       lightMode: "Light mode",
       darkMode: "Dark mode",

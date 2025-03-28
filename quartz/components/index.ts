@@ -21,6 +21,7 @@ import RecentNotes from "./RecentNotes"
 import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import TagNav from "./TagNav"
+import RelatedContent from "./RelatedContent"
 
 export {
   ArticleTitle,
@@ -37,6 +38,7 @@ export {
   TagList,
   Graph,
   Backlinks,
+  RelatedContent,
   Search,
   Footer,
   DesktopOnly,
