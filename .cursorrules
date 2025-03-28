@@ -24,10 +24,17 @@ npx quartz build
 ---
 title: "Title"
 date: 2024-02-08
-tags: [tag1, tag2]
+tags: [tag1, tag2]  # Used for navigation and Related Articles section
 publish: true  # required
 ---
 ```
+
+### Related Articles
+- Appears at the bottom of each article
+- Shows up to 5 articles with matching tags
+- Articles are sorted by number of matching tags
+- Improves SEO and internal linking
+- Automatically hidden if no matching articles found
 
 ## Development
 - Branch from `v4`: `feat/*` or `fix/*`
