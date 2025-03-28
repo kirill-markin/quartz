@@ -4,6 +4,25 @@ import { visit } from "unist-util-visit"
 import { toString } from "mdast-util-to-string"
 import Slugger from "github-slugger"
 
+// Function to strip HTML tags and decode HTML entities
+function stripHtml(html: string): string {
+  // First remove HTML tags
+  const withoutTags = html.replace(/<[^>]*>/g, '')
+  
+  // Then decode common HTML entities
+  return withoutTags
+    .replace(/&rarr;/g, '→')
+    .replace(/&larr;/g, '←')
+    .replace(/&rArr;/g, '⇒')
+    .replace(/&lArr;/g, '⇐')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&nbsp;/g, ' ')
+}
+
 export interface Options {
   maxDepth: 1 | 2 | 3 | 4 | 5 | 6
   minEntries: number
@@ -40,7 +59,7 @@ export const TableOfContents: QuartzTransformerPlugin<Partial<Options>> = (userO
               let highestDepth: number = opts.maxDepth
               visit(tree, "heading", (node) => {
                 if (node.depth <= opts.maxDepth) {
-                  const text = toString(node)
+                  const text = stripHtml(toString(node))
                   highestDepth = Math.min(highestDepth, node.depth)
                   toc.push({
                     depth: node.depth,

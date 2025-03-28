@@ -7,6 +7,7 @@ import { FilePath, FullSlug } from "../util/path"
 interface RelatedContentOptions {
   hideIfEmpty: boolean
   maxArticles: number
+  title?: string
 }
 
 const defaultOptions: RelatedContentOptions = {
@@ -23,6 +24,11 @@ export default ((opts?: Partial<RelatedContentOptions>) => {
     displayClass,
     cfg,
   }: QuartzComponentProps) => {
+    // Don't show on index page
+    if (fileData.slug === "index") {
+      return null
+    }
+    
     // If no tags, don't show the component
     const currentTags = fileData.frontmatter?.tags || []
     if (currentTags.length === 0) {
@@ -59,9 +65,13 @@ export default ((opts?: Partial<RelatedContentOptions>) => {
       return null
     }
 
+    // Use custom title or get from i18n
+    const title = options.title ?? i18n(cfg.locale).components.relatedContent?.title ?? "Related Articles"
+    const emptyMessage = i18n(cfg.locale).components.relatedContent?.noRelatedContent ?? "No related articles"
+
     return (
       <div class={classNames(displayClass, "related-content")}>
-        <h2>{i18n(cfg.locale).components.relatedContent.title}</h2>
+        <h2>{title}</h2>
         <ul>
           {relatedArticles.length > 0 ? (
             relatedArticles.map((f) => (
@@ -72,7 +82,7 @@ export default ((opts?: Partial<RelatedContentOptions>) => {
               </li>
             ))
           ) : (
-            <li>{i18n(cfg.locale).components.relatedContent.noRelatedContent}</li>
+            <li>{emptyMessage}</li>
           )}
         </ul>
       </div>
@@ -81,9 +91,7 @@ export default ((opts?: Partial<RelatedContentOptions>) => {
 
   RelatedContent.css = `
   .related-content {
-    margin: 4rem 0 2rem 0;
-    padding-top: 2rem;
-    border-top: 1px solid var(--lightgray);
+    margin: 2rem 0;
   }
   
   .related-content h2 {

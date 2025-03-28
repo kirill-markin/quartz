@@ -72,9 +72,7 @@ export default ((opts?: Partial<LatestPostsOptions>) => {
 
   LatestPosts.css = `
   .latest-posts {
-    margin: 4rem 0 2rem 0;
-    padding-top: 2rem;
-    border-top: 1px solid var(--lightgray);
+    margin: 2rem 0;
   }
   
   .latest-posts h2 {
