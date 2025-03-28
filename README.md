@@ -60,7 +60,7 @@ npx quartz build
   ---
   title: "Page Title"
   date: 2024-02-08
-  tags: [tag1, tag2]
+  tags: [tag1, tag2]  # Used for navigation and Related Articles
   publish: true
   ---
   ```
@@ -74,6 +74,16 @@ npx quartz build
 - 🌙 Dark/Light mode
 - 🧮 LaTeX support
 - 📝 Table of contents generation
+- 📚 Related Articles section
+  - Shows up to 5 articles with matching tags
+  - Sorted by relevance (number of matching tags)
+  - Improves navigation and SEO
+  - Automatically hidden if no matches found
+- 📅 Latest Posts on Homepage
+  - Shows 5 most recent published articles
+  - Improves content discovery
+  - SEO-optimized with proper heading structure
+  - Automatically updates as new content is added
 
 ## Contributing
 

@@ -24,10 +24,22 @@ npx quartz build
 ---
 title: "Title"
 date: 2024-02-08
-tags: [tag1, tag2]
+tags: [tag1, tag2]  # Used for navigation and Related Articles section
 publish: true  # required
 ---
 ```
+
+### Related Articles
+- Implementation: `quartz/components/RelatedContent.tsx`
+- Shows 5 articles with matching tags
+- Sorted by matching tags count
+- Auto-hidden if empty
+
+### Latest Posts
+- Implementation: `quartz/components/LatestPosts.tsx`
+- Shows 5 recent articles on index
+- Sorted by date (newest first)
+- SEO-optimized h2 heading
 
 ## Development
 - Branch from `v4`: `feat/*` or `fix/*`

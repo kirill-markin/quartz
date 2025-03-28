@@ -29,6 +29,10 @@ export default {
       title: "Похожие статьи",
       noRelatedContent: "Похожие статьи не найдены",
     },
+    latestPosts: {
+      title: "Последние посты",
+      noLatestPosts: "Нет опубликованных статей",
+    },
     themeToggle: {
       lightMode: "Светлый режим",
       darkMode: "Тёмный режим",
