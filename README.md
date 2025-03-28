@@ -79,6 +79,11 @@ npx quartz build
   - Sorted by relevance (number of matching tags)
   - Improves navigation and SEO
   - Automatically hidden if no matches found
+- 📅 Latest Posts on Homepage
+  - Shows 5 most recent published articles
+  - Improves content discovery
+  - SEO-optimized with proper heading structure
+  - Automatically updates as new content is added
 
 ## Contributing
 

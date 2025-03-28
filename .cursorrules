@@ -36,6 +36,13 @@ publish: true  # required
 - Improves SEO and internal linking
 - Automatically hidden if no matching articles found
 
+### Latest Posts
+- Appears on the homepage (index)
+- Shows 5 most recent published articles
+- Sorted by publication date (newest first)
+- SEO-optimized with h2 heading
+- Improves content discovery and navigation
+
 ## Development
 - Branch from `v4`: `feat/*` or `fix/*`
 - Pull & update submodules before work
