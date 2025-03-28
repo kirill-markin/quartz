@@ -30,18 +30,16 @@ publish: true  # required
 ```
 
 ### Related Articles
-- Appears at the bottom of each article
-- Shows up to 5 articles with matching tags
-- Articles are sorted by number of matching tags
-- Improves SEO and internal linking
-- Automatically hidden if no matching articles found
+- Implementation: `quartz/components/RelatedContent.tsx`
+- Shows 5 articles with matching tags
+- Sorted by matching tags count
+- Auto-hidden if empty
 
 ### Latest Posts
-- Appears on the homepage (index)
-- Shows 5 most recent published articles
-- Sorted by publication date (newest first)
-- SEO-optimized with h2 heading
-- Improves content discovery and navigation
+- Implementation: `quartz/components/LatestPosts.tsx`
+- Shows 5 recent articles on index
+- Sorted by date (newest first)
+- SEO-optimized h2 heading
 
 ## Development
 - Branch from `v4`: `feat/*` or `fix/*`
