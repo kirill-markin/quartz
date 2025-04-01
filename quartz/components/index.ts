@@ -23,6 +23,7 @@ import Comments from "./Comments"
 import TagNav from "./TagNav"
 import RelatedContent from "./RelatedContent"
 import LatestPosts from "./LatestPosts"
+import SocialShare from "./SocialShare"
 
 export {
   ArticleTitle,
@@ -50,4 +51,5 @@ export {
   Comments,
   TagNav,
   LatestPosts,
+  SocialShare,
 }

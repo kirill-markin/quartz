@@ -34,6 +34,10 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
     Component.Backlinks(),
+    Component.SocialShare({
+      fixedPosition: true,
+      platforms: ["twitter", "facebook", "linkedin", "reddit"]
+    }),
   ],
 }
 
