@@ -6,65 +6,65 @@
       <description>Last 10 notes on Kirill&#039;s notes</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>LLM-Powered HTML Presentation Generator</title>
-    <link>https://articles.kirill-markin.com/llm-powered-html-presentation-generator</link>
-    <guid>https://articles.kirill-markin.com/llm-powered-html-presentation-generator</guid>
-    <description>Concept A minimalist approach to creating presentations using plain HTML files and AI assistance in Cursor IDE. Instead of complex presentation software, use simple HTML files for each slide, letting AI help with content and styling.</description>
-    <pubDate>Thu, 27 Mar 2025 00:00:00 GMT</pubDate>
-  </item><item>
     <title>Content Distribution Strategy for Personal Brand and Business</title>
     <link>https://articles.kirill-markin.com/content-distribution-strategy-for-personal-brand</link>
     <guid>https://articles.kirill-markin.com/content-distribution-strategy-for-personal-brand</guid>
     <description>This is my personal standard for distributing content across various platforms. I use this system to maintain consistency in sharing personal insights.</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Cursor IDE: Frontend vs Backend Development Experience</title>
     <link>https://articles.kirill-markin.com/cursor-frontend-vs-backend-experience</link>
     <guid>https://articles.kirill-markin.com/cursor-frontend-vs-backend-experience</guid>
     <description>After six months of successfully using Cursor IDE for backend applications and data pipelines, I tried it for frontend development today. The difference was striking.</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Cursor IDE: Rules for AI</title>
     <link>https://articles.kirill-markin.com/cursor-ide-rules-for-ai</link>
     <guid>https://articles.kirill-markin.com/cursor-ide-rules-for-ai</guid>
     <description>Cursor IDE implements three levels of AI rules: Rules for AI in Cursor IDE settings - base rules that apply globally to all projects .cursorrules file in repository root - project-specific ...</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Cursor IDE: Setup and Practical Workflow for Large-Scale Projects</title>
     <link>https://articles.kirill-markin.com/cursor-ide-setup-workflow-for-large-scale-projects</link>
     <guid>https://articles.kirill-markin.com/cursor-ide-setup-workflow-for-large-scale-projects</guid>
     <description>Let me share how I organize my development process in Cursor IDE. With over a decade of coding experience, I’ve recently made Cursor my primary development environment, using it for about 6 hours each workday and additional time on weekends.</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Best way to publish a large collection of Markdown files as a searchable, SEO-friendly website?</title>
     <link>https://articles.kirill-markin.com/cursor-vs-notion-reddit-post</link>
     <guid>https://articles.kirill-markin.com/cursor-vs-notion-reddit-post</guid>
     <description>Hey everyone! I’m trying to figure out the best way to put a large collection of markdown content online as a nice, SEO-friendly website, where some stuff would be public and searchable, ...</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Could Sharing Everything Publicly Help Your Product&#039;s Reach?</title>
     <link>https://articles.kirill-markin.com/embracing-public-communication</link>
     <guid>https://articles.kirill-markin.com/embracing-public-communication</guid>
     <description>Here’s a thought I’ve been playing with: what if we shared more of our work publicly? Instead of keeping discussions in private chats, we could talk more on platforms like Reddit and ...</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>How to Fix Steam Game Downloads in Whisky on macOS</title>
     <link>https://articles.kirill-markin.com/fix-whisky-steam-game-downloads</link>
     <guid>https://articles.kirill-markin.com/fix-whisky-steam-game-downloads</guid>
     <description>Issue When using Whisky (a Wine wrapper) on macOS, you might encounter an issue where some Steam games download normally while others fail to download at all ...</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Kirill Markin&#039;s Public Notes Collection 📝 ✨</title>
     <link>https://articles.kirill-markin.com</link>
     <guid>https://articles.kirill-markin.com</guid>
     <description>This is the public section of Kirill Markin’s Obsidian vault – a curated collection of notes, thoughts, and insights made available for public access.</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Don&#039;t charge clients for short breaks when you bill by the hour</title>
     <link>https://articles.kirill-markin.com/linkedin-post-hourly-billing-breaks</link>
     <guid>https://articles.kirill-markin.com/linkedin-post-hourly-billing-breaks</guid>
     <description>Many clients are familiar with the Pomodoro Method: 25 minutes of work, then a 5-minute break. Here’s a new way to handle these breaks. Don’t charge for short breaks.</description>
-    <pubDate>Tue, 11 Feb 2025 00:00:00 GMT</pubDate>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>LLM-Powered HTML Presentation Generator</title>
+    <link>https://articles.kirill-markin.com/llm-powered-html-presentation-generator</link>
+    <guid>https://articles.kirill-markin.com/llm-powered-html-presentation-generator</guid>
+    <description>Concept A minimalist approach to creating presentations using plain HTML files and AI assistance in Cursor IDE. Instead of complex presentation software, use simple HTML files for each slide, letting AI help with content and styling.</description>
+    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
