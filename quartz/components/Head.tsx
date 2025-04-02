@@ -151,9 +151,11 @@ export default (() => {
     }
 
     // Url of current page
-    const socialUrl =
-      fileData.slug === "404" ? url.toString() : joinSegments(url.toString(), fileData.slug!)
-
+    const pageUrl = 
+      fileData.slug === "404" ? url.toString() : 
+      fileData.slug === "index" ? url.toString().replace(/\/$/, "") : 
+      joinSegments(url.toString(), fileData.slug!)
+    
     return (
       <head>
         <title>{title}</title>
@@ -190,8 +192,9 @@ export default (() => {
             <meta name="twitter:image" content={ogImagePath} />
             <meta property="og:image" content={ogImagePath} />
             <meta property="twitter:domain" content={cfg.baseUrl}></meta>
-            <meta property="og:url" content={socialUrl}></meta>
-            <meta property="twitter:url" content={socialUrl}></meta>
+            <meta property="og:url" content={pageUrl}></meta>
+            <meta property="twitter:url" content={pageUrl}></meta>
+            <link rel="canonical" href={pageUrl} />
           </>
         )}
         <link rel="icon" href={iconPath} />
