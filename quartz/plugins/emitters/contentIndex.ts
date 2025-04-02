@@ -38,10 +38,14 @@ const defaultOptions: Options = {
 
 function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
   const base = cfg.baseUrl ?? ""
-  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<url>
-    <loc>https://${joinSegments(base, encodeURI(slug))}</loc>
+  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => {
+    // Handle homepage URLs
+    const url = `https://${joinSegments(base, encodeURI(slug))}`;
+    return `<url>
+    <loc>${url}</loc>
     ${content.date && `<lastmod>${content.date.toISOString()}</lastmod>`}
   </url>`
+  }
 
   // Get all unique tags from content
   const tags = new Set<string>()
@@ -80,19 +84,28 @@ function generateSiteMap(cfg: GlobalConfiguration, idx: ContentIndex): string {
     date: new Date() // Use current date for tags index
   })
 
-  return `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${contentUrls}${tagUrls}${tagsIndexUrl}</urlset>`
+  let sitemap = `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">${contentUrls}${tagUrls}${tagsIndexUrl}</urlset>`;
+  
+  // Fix homepage URL - ensure it has no trailing slash
+  sitemap = sitemap.replace(`https://${base}/</loc>`, `https://${base}</loc>`);
+  
+  return sitemap
 }
 
 function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: number): string {
   const base = cfg.baseUrl ?? ""
 
-  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => `<item>
+  const createURLEntry = (slug: SimpleSlug, content: ContentDetails): string => {
+    // Handle all URLs consistently
+    const url = `https://${joinSegments(base, encodeURI(slug))}`;
+    return `<item>
     <title>${escapeHTML(content.title)}</title>
-    <link>https://${joinSegments(base, encodeURI(slug))}</link>
-    <guid>https://${joinSegments(base, encodeURI(slug))}</guid>
+    <link>${url}</link>
+    <guid>${url}</guid>
     <description>${content.richContent ?? content.description}</description>
     <pubDate>${content.date?.toUTCString()}</pubDate>
   </item>`
+  }
 
   const items = Array.from(idx)
     .sort(([_, f1], [__, f2]) => {
@@ -110,7 +123,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
     .slice(0, limit ?? idx.size)
     .join("")
 
-  return `<?xml version="1.0" encoding="UTF-8" ?>
+  let rss = `<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0">
     <channel>
       <title>${escapeHTML(cfg.pageTitle)}</title>
@@ -121,7 +134,13 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       ${items}
     </channel>
-  </rss>`
+  </rss>`;
+  
+  // Fix homepage URL - ensure it has no trailing slash
+  rss = rss.replace(`https://${base}/</link>`, `https://${base}</link>`);
+  rss = rss.replace(`https://${base}/</guid>`, `https://${base}</guid>`);
+  
+  return rss
 }
 
 export const ContentIndex: QuartzEmitterPlugin<Partial<Options>> = (opts) => {
