@@ -172,11 +172,26 @@ export default (() => {
         {/* OG/Twitter meta tags */}
         <meta name="og:site_name" content={cfg.pageTitle}></meta>
         <meta property="og:title" content={title} />
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={fileData.slug === "index" ? "website" : "article"} />
+        <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta property="og:description" content={description} />
+        {fileData.slug !== "index" && fileData.dates?.published && (
+          <meta property="article:published_time" content={new Date(fileData.dates.published).toISOString()} />
+        )}
+        {fileData.slug !== "index" && fileData.dates?.modified && (
+          <meta property="article:modified_time" content={new Date(fileData.dates.modified).toISOString()} />
+        )}
+        {fileData.slug !== "index" && (
+          <meta property="article:author" content="Kirill Markin" />
+        )}
+        {fileData.slug !== "index" && fileData.frontmatter?.tags && Array.isArray(fileData.frontmatter.tags) && 
+          fileData.frontmatter.tags.map((tag: string, index: number) => (
+            <meta key={`article-tag-${index}`} property="article:tag" content={tag} />
+          ))
+        }
         <meta property="og:image:type" content={`image/${extension}`} />
         <meta property="og:image:alt" content={description} />
         {/* Dont set width and height if unknown (when using custom frontmatter image) */}
@@ -204,6 +219,41 @@ export default (() => {
         {js
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
+          
+        {/* Structured data for author using Schema.org */}
+        {fileData.slug !== "index" && (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": title,
+              "image": ogImagePath,
+              "datePublished": fileData.dates?.published ? new Date(fileData.dates.published).toISOString() : undefined,
+              "dateModified": fileData.dates?.modified ? new Date(fileData.dates.modified).toISOString() : undefined,
+              "author": {
+                "@type": "Person",
+                "@id": "https://kirill-markin.com",
+                "name": "Kirill Markin",
+                "url": "https://kirill-markin.com",
+                "sameAs": [
+                  "https://x.com/kirill_markin_",
+                  "https://github.com/kirill-markin",
+                  "https://www.linkedin.com/in/kirill-markin/"
+                ]
+              },
+              "publisher": {
+                "@type": "Person", 
+                "@id": "https://kirill-markin.com",
+                "name": "Kirill Markin",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": `https://${cfg.baseUrl}/static/icon.png`
+                }
+              },
+              "mainEntityOfPage": pageUrl
+            })}
+          </script>
+        )}
       </head>
     )
   }
