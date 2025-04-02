@@ -220,8 +220,46 @@ export default (() => {
           .filter((resource) => resource.loadTime === "beforeDOMReady")
           .map((res) => JSResourceToScriptElement(res, true))}
           
-        {/* Structured data for author using Schema.org */}
-        {fileData.slug !== "index" && (
+        {/* Structured data using Schema.org */}
+        {fileData.slug === "index" ? (
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": cfg.pageTitle,
+              "description": description,
+              "url": url.toString().replace(/\/$/, ""),
+              "author": {
+                "@type": "Person",
+                "@id": "https://kirill-markin.com",
+                "name": "Kirill Markin",
+                "url": "https://kirill-markin.com",
+                "sameAs": [
+                  "https://x.com/kirill_markin_",
+                  "https://github.com/kirill-markin",
+                  "https://www.linkedin.com/in/kirill-markin/"
+                ]
+              },
+              "publisher": {
+                "@type": "Person", 
+                "@id": "https://kirill-markin.com",
+                "name": "Kirill Markin",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": `https://${cfg.baseUrl}/static/icon.png`
+                }
+              },
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": `https://${cfg.baseUrl}/?q={search_term_string}`
+                },
+                "query-input": "required name=search_term_string"
+              }
+            })}
+          </script>
+        ) : (
           <script type="application/ld+json">
             {JSON.stringify({
               "@context": "https://schema.org",
