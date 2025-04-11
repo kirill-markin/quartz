@@ -6,6 +6,12 @@
       <description>Last 10 notes on Kirill&#039;s notes</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Cursor IDE: Rules for AI</title>
+    <link>https://articles.kirill-markin.com/cursor-ide-rules-for-ai</link>
+    <guid>https://articles.kirill-markin.com/cursor-ide-rules-for-ai</guid>
+    <description>Cursor IDE implements three levels of AI rules: Rules for AI in Cursor IDE settings - base rules that apply globally to all projects .cursorrules file in repository root - project-specific ...</description>
+    <pubDate>Fri, 11 Apr 2025 00:00:00 GMT</pubDate>
+  </item><item>
     <title>Content Distribution Strategy for Personal Brand and Business</title>
     <link>https://articles.kirill-markin.com/content-distribution-strategy-for-personal-brand</link>
     <guid>https://articles.kirill-markin.com/content-distribution-strategy-for-personal-brand</guid>
@@ -16,12 +22,6 @@
     <link>https://articles.kirill-markin.com/cursor-frontend-vs-backend-experience</link>
     <guid>https://articles.kirill-markin.com/cursor-frontend-vs-backend-experience</guid>
     <description>After six months of successfully using Cursor IDE for backend applications and data pipelines, I tried it for frontend development today. The difference was striking.</description>
-    <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>Cursor IDE: Rules for AI</title>
-    <link>https://articles.kirill-markin.com/cursor-ide-rules-for-ai</link>
-    <guid>https://articles.kirill-markin.com/cursor-ide-rules-for-ai</guid>
-    <description>Cursor IDE implements three levels of AI rules: Rules for AI in Cursor IDE settings - base rules that apply globally to all projects .cursorrules file in repository root - project-specific ...</description>
     <pubDate>Wed, 02 Apr 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Cursor IDE: Setup and Practical Workflow for Large-Scale Projects</title>
