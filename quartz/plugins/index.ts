@@ -42,6 +42,7 @@ export * from "./transformers"
 export * from "./filters"
 export * from "./emitters"
 export { RobotsTxt } from "./emitters/robotsTxt"
+export { SunsetPage } from "./emitters/custom/sunsetPage"
 
 declare module "vfile" {
   // inserted in processors.ts
