@@ -1,5 +1,5 @@
 User-agent: *
-Allow: /
+Disallow: /
 
-# Sitemap
-Sitemap: https://articles.kirill-markin.com/sitemap.xml
+# Website has been sunset. All content is no longer available.
+# Content has been moved to: https://kirill-markin.com/

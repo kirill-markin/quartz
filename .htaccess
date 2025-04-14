@@ -1,0 +1,7 @@
+# Return 410 Gone for all requests
+RewriteEngine On
+RewriteCond %{REQUEST_URI} !=/index.html
+RewriteRule .* - [G,L]
+
+# Set HTTP response status code to 410 Gone
+ErrorDocument 410 /index.html
