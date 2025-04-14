@@ -12,10 +12,10 @@ export const RobotsTxt: QuartzEmitterPlugin = () => {
     async emit({ argv, cfg }): Promise<FilePath[]> {
       const baseUrl = cfg.configuration.baseUrl ? `https://${cfg.configuration.baseUrl}` : ""
       const robotsTxtContent: string = `User-agent: *
-Allow: /
+Disallow: /
 
-# Sitemap
-Sitemap: ${baseUrl}/sitemap.xml
+# Website has been sunset. All content is no longer available.
+# Content has been moved to: https://kirill-markin.com/
 `
 
       const outputPath = path.join(argv.output, "robots.txt")
