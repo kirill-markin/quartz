@@ -1,5 +1,13 @@
 # Kirill Markin's Digital Garden 🌱
 
+> [!IMPORTANT]
+> **Repository Sunset Notice**
+> 
+> This repository is no longer actively maintained. All new content and development has moved to the new repository:
+> [https://github.com/kirill-markin/website-next-js](https://github.com/kirill-markin/website-next-js)
+>
+> Please update your bookmarks and visit the new repository for the latest updates.
+
 This repository hosts my personal digital garden/blog available at [articles.kirill-markin.com](https://articles.kirill-markin.com). It's built using [Quartz](https://quartz.jzhao.xyz/), a powerful static site generator designed for publishing digital gardens and personal knowledge bases.
 
 ## About This Site
